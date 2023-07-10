@@ -548,7 +548,7 @@ export default function Main() {
 			
 
 
-			<div className={`mt-5 w-full flex justify-between px-5 pb-10 items-center`}>
+			<div className={`mt-5 w-full flex justify-between px-5 pb-[70px] items-center`}>
 				<button	
 				onClick	={()=>{
 					location.reload()
