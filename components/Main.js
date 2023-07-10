@@ -587,7 +587,7 @@ export default function Main() {
 					scrollbar-thin ${confirm && ''} transition-all duration-300 ease-in-out scrollbar-track-gray-300 scrollbar-thumb-sky-500`}>
 					{
 						cartArray?.map((cart,j)=>(
-						<div className="flex flex-col">
+						<div key={j} className="flex flex-col">
 							<div className="flex hover:bg-gray-200/50 ease-in-out transition-all duration-200
 							cursor-pointer items-center justify-between gap-7 px-2 py-3 rounded-xl">
 								<h1 className="text-lg text-black font-semibold">{cart?.name}</h1>
