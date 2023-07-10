@@ -110,7 +110,7 @@ export default function Main() {
 						<h1 className="lg:text-3xl text-2xl text-black">Coco Soap</h1>
 						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-1 px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
-							<h1 className="md:text-xl text-lg sm:mb-0 mb-2  flex flex-wrap text-black">Coco soap scented</h1>
+							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Coco soap scented</h1>
 							<div className="flex gap-2 items-center">
 								<label class="checkbox-btn">
 								    <label for="checkbox"></label>
