@@ -108,7 +108,7 @@ export default function Main() {
 				<div className="w-full flex items-center">
 					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
 						<h1 className="lg:text-3xl text-2xl text-black">Coco Soap</h1>
-						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-1 px-2 w-full justify-between 
+						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Coco soap scented</h1>
 							<div className="flex gap-2 items-center">
@@ -146,7 +146,7 @@ export default function Main() {
 								</div>
 							</div>
 						</div>
-						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-1 px-2 w-full justify-between 
+						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Coco soap unscented</h1>
 							<div className="flex gap-2 items-center">
@@ -192,7 +192,7 @@ export default function Main() {
 				<div className="w-full flex items-center">
 					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
 						<h1 className="lg:text-3xl text-2xl text-black">Kadala Mauv Soap</h1>
-						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-1 px-2 w-full justify-between 
+						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Kadala Mauv soap scented</h1>
 							<div className="flex gap-2 items-center">
@@ -230,7 +230,7 @@ export default function Main() {
 								</div>
 							</div>
 						</div>
-						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-1 px-2 w-full justify-between 
+						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Kadala Mauv soap unscented</h1>
 							<div className="flex gap-2 items-center">
@@ -276,7 +276,7 @@ export default function Main() {
 				<div className="w-full flex items-center">
 					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
 						<h1 className="lg:text-3xl text-2xl text-black">Shampoo</h1>
-						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-1 px-2 w-full justify-between 
+						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Hair Pro Shampoo 250g</h1>
 							<div className="flex gap-2 items-center">
@@ -323,7 +323,7 @@ export default function Main() {
 				<div className="w-full flex items-center">
 					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
 						<h1 className="lg:text-3xl text-2xl text-black">Liquid detergent</h1>
-						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-1 px-2 w-full justify-between 
+						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Active Wash Liquid Deterent 1 litre</h1>
 							<div className="flex gap-2 items-center">
@@ -361,7 +361,7 @@ export default function Main() {
 								</div>
 							</div>
 						</div>
-						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-1 px-2 w-full justify-between 
+						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">High Quality Liquid Detergent 5L with can</h1>
 							<div className="flex gap-2 items-center">
@@ -408,7 +408,7 @@ export default function Main() {
 				<div className="w-full flex items-center">
 					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
 						<h1 className="lg:text-3xl text-2xl text-black">Handwash Liquid</h1>
-						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-1 px-2 w-full justify-between 
+						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Clean Hand Handwash Liquid 500g</h1>
 							<div className="flex gap-2 items-center">
@@ -455,7 +455,7 @@ export default function Main() {
 				<div className="w-full flex items-center">
 					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
 						<h1 className="lg:text-3xl text-2xl text-black">Dishwash</h1>
-						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-1 px-2 w-full justify-between 
+						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Dish Wash Soap</h1>
 							<div className="flex gap-2 items-center">
@@ -502,7 +502,7 @@ export default function Main() {
 				<div className="w-full flex items-center">
 					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
 						<h1 className="lg:text-3xl text-2xl text-black">Handwash</h1>
-						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-1 px-2 w-full justify-between 
+						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Hand Wash Soap (a set of 3)</h1>
 							<div className="flex gap-2 items-center">
