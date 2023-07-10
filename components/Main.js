@@ -100,7 +100,7 @@ export default function Main() {
 			</div>
 			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
 				<div className="w-full h-[10px] absolute rounded-t-xl top-0 bg-[#7a6357]/80"/>
-				<h1 className="md:px-10 px-5 py-6 lg:text-5xl md:text-4xl sm:text-3xl xs:text-xl text-lg font-semibold text-center text-black">
+				<h1 className="md:px-10 px-5 py-6 lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-semibold text-center text-black">
 					Order form
 				</h1>
 			</div>
