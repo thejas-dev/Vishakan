@@ -1,7 +1,8 @@
 import {AiOutlinePlus,AiOutlineMinus} from 'react-icons/ai'
 import {useState,useEffect	} from 'react';
 import {RxCross2} from 'react-icons/rx';
-import {BsWhatsapp} from 'react-icons/bs'
+import {BsWhatsapp} from 'react-icons/bs';
+import {FiMail} from 'react-icons/fi';
 
 export default function Main() {
 	// body...
@@ -10,17 +11,38 @@ export default function Main() {
 	const [openOverlay,setOpenOverlay] = useState(false);
 	const [confirm,setConfirm] = useState(false);
 	const [url,setUrl] = useState('');
+	const [mailUrl,setMailUrl] = useState('');
+	const [address,setAddress] = useState('');
 
 
-	const urlSetter = () => {
-		console.log(cartArray)
+	const sendMail = () => {
+		console.log()
+		window.location.href = `${encodeURI(`mailto:${process.env.NEXT_PUBLIC_MAIL}?subject=New Order&body=${mailUrl}`)}`
+	}
+
+	const mailUrlSetter = () => {
 		let arr = cartArray.map((car)=>{
 			return car?.name + ' - x' + car?.quantity
 		})
+		if(address.length > 0){
+			let str1 = `\nAddress : ${address}`;
+			arr.push(str1);
+		}
+		setMailUrl(arr.join('\n'));
+	}
+
+
+	const urlSetter = () => {
+		mailUrlSetter();
+		let arr = cartArray.map((car)=>{
+			return car?.name + ' - x' + car?.quantity
+		})
+		if(address.length > 0){
+			let str1 = `\nAddress : ${address}`;
+			arr.push(str1);
+		}
 		let str = `https://wa.me/+91${process.env.NEXT_PUBLIC_NUMBER}?text=New Order\n\n${arr.join('\n')}`;
 		setUrl(encodeURI(str));
-		console.log(encodeURI(str));
-
 	}
 
 	const addToList = (name) => {
@@ -92,16 +114,21 @@ export default function Main() {
 	return (
 		<div className="mx-auto flex flex-col py-5 gap-3 md:px-10 px-3 h-full max-w-3xl">	
 			<div className='w-full rounded-xl'>
-				<img src="https://ik.imagekit.io/d3kzbpbila/thejashari_9dS0MoRSv?updatedAt=1689019280639"
+				<img src="https://ik.imagekit.io/d3kzbpbila/png_20230711_200333_0000_ITKpuqDOr.png?updatedAt=1689174479637"
 				alt=""
 				className="w-full rounded-xl"
 				onClick={()=>console.log(cartArray)}
 				/>
 			</div>
 			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
-				<div className="w-full h-[10px] absolute rounded-t-xl top-0 bg-[#7a6357]/80"/>
+				<div className="w-full h-[10px] absolute rounded-t-xl top-0 bg-[#3d5b20]/80"/>
 				<h1 className="md:px-10 px-5 pt-6 pb-4 lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-semibold text-center text-black">
 					Order Form
+				</h1>
+			</div>
+			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
+				<h1 className="md:px-10 px-5 py-4 lg:text-3xl md:text-2xl sm:text-xl text-xl font-semibold text-center text-black">
+					Made of 100% coconut oil
 				</h1>
 			</div>
 			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
@@ -110,7 +137,7 @@ export default function Main() {
 						<h1 className="lg:text-3xl text-2xl text-black">Coco Soap</h1>
 						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] transition-all duration-200 ease-in-out px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
-							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Coco soap scented</h1>
+							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Scented</h1>
 							<div className="flex gap-2 items-center">
 								<label class="checkbox-btn">
 								    <label for="checkbox"></label>
@@ -148,7 +175,7 @@ export default function Main() {
 						</div>
 						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] transition-all duration-200 ease-in-out px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
-							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Coco soap unscented</h1>
+							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Unscented</h1>
 							<div className="flex gap-2 items-center">
 								<label class="checkbox-btn">
 								    <label for="checkbox2"></label>
@@ -194,7 +221,7 @@ export default function Main() {
 						<h1 className="lg:text-3xl text-2xl text-black">Kadala Mauv Soap</h1>
 						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] transition-all duration-200 ease-in-out px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
-							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Kadala Mauv soap scented</h1>
+							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Scented</h1>
 							<div className="flex gap-2 items-center">
 								<label class="checkbox-btn">
 								    <label for="checkbox"></label>
@@ -232,7 +259,7 @@ export default function Main() {
 						</div>
 						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] transition-all duration-200 ease-in-out px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
-							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Kadala Mauv soap unscented</h1>
+							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Unscented</h1>
 							<div className="flex gap-2 items-center">
 								<label class="checkbox-btn">
 								    <label for="checkbox4"></label>
@@ -275,7 +302,7 @@ export default function Main() {
 			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
 				<div className="w-full flex items-center">
 					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
-						<h1 className="lg:text-3xl text-2xl text-black">Shampoo</h1>
+						<h1 className="lg:text-3xl text-2xl text-black">Shampoo (100% coconut oil)</h1>
 						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] transition-all duration-200 ease-in-out px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Hair Pro Shampoo 250g</h1>
@@ -322,7 +349,7 @@ export default function Main() {
 			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
 				<div className="w-full flex items-center">
 					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
-						<h1 className="lg:text-3xl text-2xl text-black">Liquid detergent</h1>
+						<h1 className="lg:text-3xl text-2xl text-black">Liquid detergent (100% coconut oil)</h1>
 						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] transition-all duration-200 ease-in-out px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Active Wash Liquid Deterent 1 litre</h1>
@@ -361,44 +388,7 @@ export default function Main() {
 								</div>
 							</div>
 						</div>
-						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] transition-all duration-200 ease-in-out px-2 w-full justify-between 
-						items-center border-[1px] border-gray-400/30 rounded-xl">
-							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">High Quality Liquid Detergent 5L with can</h1>
-							<div className="flex gap-2 items-center">
-								<label class="checkbox-btn">
-								    <label for="checkbox"></label>
-								    <input onChange={(e)=>{
-								    	if(document.getElementById('checkbox10').checked){
-								    		addToList('High Quality Liquid Detergent 5L with can')
-								    		document.getElementById('valuebox10').classList.remove('w-0')
-								    		document.getElementById('valuebox10').classList.add('w-20')
-								    	}else{
-								    		removeFromList('High Quality Liquid Detergent 5L with can')
-								    		document.getElementById('valuebox10').classList.remove('w-20')
-								    		document.getElementById('valuebox10').classList.add('w-0')
-								    		document.getElementById('quantity-High Quality Liquid Detergent 5L with can').innerText = '1'
-								    	}
-								    }} id="checkbox10" type="checkbox"/>
-								    <span className="checkmark"></span>
-								</label>
-								<div id="valuebox10" className={`flex items-center transition-all overflow-hidden duration-200 ease-in-out w-0`}>
-									<div className="bg-white max-w-[100%] border-gray-500/40 border-[1px] rounded-2xl gap-2 flex items-center">
-										<div 
-										onClick={()=>addQuantity('High Quality Liquid Detergent 5L with can')}
-										className="p-[2px] rounded-full hover:bg-gray-200/40 transition-all duration-200 ease-in-out">
-											<AiOutlinePlus className="select-none h-5 w-5 cursor-pointer text-sky-500"/>
-										</div>
-										<p id="quantity-High Quality Liquid Detergent 5L with can" className="text-md text-black select-none">1</p>
-										<div 
-										onClick={()=>minusQuantity('High Quality Liquid Detergent 5L with can')}
-										className="p-[2px] rounded-full hover:bg-gray-200/40 transition-all duration-200 ease-in-out">
-											<AiOutlineMinus className="select-none h-5 w-5 cursor-pointer text-sky-500"/>
-										</div>
-									</div>
-
-								</div>
-							</div>
-						</div>
+						
 						
 
 					</div>
@@ -407,7 +397,7 @@ export default function Main() {
 			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
 				<div className="w-full flex items-center">
 					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
-						<h1 className="lg:text-3xl text-2xl text-black">Handwash Liquid</h1>
+						<h1 className="lg:text-3xl text-2xl text-black">Handwash Liquid (100% coconut oil)</h1>
 						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] transition-all duration-200 ease-in-out px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
 							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Clean Hand Handwash Liquid 500g</h1>
@@ -454,10 +444,10 @@ export default function Main() {
 			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
 				<div className="w-full flex items-center">
 					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
-						<h1 className="lg:text-3xl text-2xl text-black">Dishwash</h1>
+						<h1 className="lg:text-3xl text-2xl text-black">Dishwash (100% coconut oil)</h1>
 						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] transition-all duration-200 ease-in-out px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
-							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Dish Wash Soap</h1>
+							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Soap</h1>
 							<div className="flex gap-2 items-center">
 								<label class="checkbox-btn">
 								    <label for="checkbox"></label>
@@ -501,10 +491,10 @@ export default function Main() {
 			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
 				<div className="w-full flex items-center">
 					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
-						<h1 className="lg:text-3xl text-2xl text-black">Handwash</h1>
+						<h1 className="lg:text-3xl text-2xl text-black">Handwash (100% coconut oil)</h1>
 						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] transition-all duration-200 ease-in-out px-2 w-full justify-between 
 						items-center border-[1px] border-gray-400/30 rounded-xl">
-							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Hand Wash Soap (a set of 3)</h1>
+							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">Soap (a set of 3)</h1>
 							<div className="flex gap-2 items-center">
 								<label class="checkbox-btn">
 								    <label for="checkbox"></label>
@@ -545,8 +535,58 @@ export default function Main() {
 					</div>
 				</div>
 			</div>
-			
+			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
+				<h1 className="md:px-10 px-5 py-4 lg:text-3xl md:text-2xl sm:text-xl text-xl font-semibold text-center text-black">
+					Other Products
+				</h1>
+			</div>
+			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
+				<div className="w-full flex items-center">
+					<div className="lg:px-10 md:px-5 px-3 flex flex-col w-full py-6">
+						<h1 className="lg:text-3xl text-2xl text-black">Liquid detergent</h1>
+						<div className="mt-4 flex flex-wrap items-center bg-sky-200/10 py-[7px] transition-all duration-200 ease-in-out px-2 w-full justify-between 
+						items-center border-[1px] border-gray-400/30 rounded-xl">
+							<h1 className="md:text-xl text-lg sm:mb-0 mb-0  flex flex-wrap text-black">High Quality Liquid Detergent 5L with can</h1>
+							<div className="flex gap-2 items-center">
+								<label class="checkbox-btn">
+								    <label for="checkbox"></label>
+								    <input onChange={(e)=>{
+								    	if(document.getElementById('checkbox10').checked){
+								    		addToList('High Quality Liquid Detergent 5L with can')
+								    		document.getElementById('valuebox10').classList.remove('w-0')
+								    		document.getElementById('valuebox10').classList.add('w-20')
+								    	}else{
+								    		removeFromList('High Quality Liquid Detergent 5L with can')
+								    		document.getElementById('valuebox10').classList.remove('w-20')
+								    		document.getElementById('valuebox10').classList.add('w-0')
+								    		document.getElementById('quantity-High Quality Liquid Detergent 5L with can').innerText = '1'
+								    	}
+								    }} id="checkbox10" type="checkbox"/>
+								    <span className="checkmark"></span>
+								</label>
+								<div id="valuebox10" className={`flex items-center transition-all overflow-hidden duration-200 ease-in-out w-0`}>
+									<div className="bg-white max-w-[100%] border-gray-500/40 border-[1px] rounded-2xl gap-2 flex items-center">
+										<div 
+										onClick={()=>addQuantity('High Quality Liquid Detergent 5L with can')}
+										className="p-[2px] rounded-full hover:bg-gray-200/40 transition-all duration-200 ease-in-out">
+											<AiOutlinePlus className="select-none h-5 w-5 cursor-pointer text-sky-500"/>
+										</div>
+										<p id="quantity-High Quality Liquid Detergent 5L with can" className="text-md text-black select-none">1</p>
+										<div 
+										onClick={()=>minusQuantity('High Quality Liquid Detergent 5L with can')}
+										className="p-[2px] rounded-full hover:bg-gray-200/40 transition-all duration-200 ease-in-out">
+											<AiOutlineMinus className="select-none h-5 w-5 cursor-pointer text-sky-500"/>
+										</div>
+									</div>
 
+								</div>
+							</div>
+						</div>
+						
+
+					</div>
+				</div>
+			</div>
 
 			<div className={`mt-5 w-full flex justify-between px-5 pb-[70px] items-center`}>
 				<button	
@@ -599,7 +639,15 @@ export default function Main() {
 						))	
 
 					}
-					<div className='mt-3 w-full flex items-center justify-center'>
+					<div className="px-2 py-1 w-full flex flex-col gap-2">
+						<h1 className="text-xl text-black font-semibold">Address (optional)</h1>
+						<div className="rounded-xl w-full border-[1px] border-gray-500/70 p-2 focus-within:border-sky-500">
+							<textarea className="w-full text-black text-md outline-none resize-none h-[80px]"
+							value={address}	onChange={(e)=>{setAddress(e.target.value)}}
+							/>
+						</div>
+					</div>
+					<div className='mt-2 w-full flex items-center justify-center'>
 						<button 
 						onClick={()=>{setConfirm(true);setOpenOverlay(false);urlSetter()}}
 						className="bg-green-700/90 hover:bg-green-600 text-white px-5 py-2 rounded-xl">
@@ -625,6 +673,13 @@ export default function Main() {
 						<div className="w-full border-[1px] bg-gray-500 "/>
 						<div className={`flex px-2 h-[86%] py-3 flex-col gap-2 w-full h-full items-center
 						scrollbar-thin transition-all duration-300 ease-in-out scrollbar-track-gray-300 scrollbar-thumb-sky-500`}>
+							<button 
+							onClick={sendMail}
+							className="flex items-center md:gap-4 xs:gap-3 gap-2 font-semibold md:text-2xl 
+							text-xl bg-orange-400 px-5 py-4 rounded-xl text-white hover:scale-105 transition-all duration-100
+							ease-in active:scale-95 shadow-xl mt-2">
+								<FiMail className="md:h-8 h-7 w-7 md:w-8 "/> Order in Email
+							</button>
 							<a href={url}><button className="flex items-center md:gap-4 xs:gap-3 gap-2 font-semibold md:text-2xl 
 							text-xl bg-[#25d366] px-5 py-4 rounded-xl text-white hover:scale-105 transition-all duration-100
 							ease-in active:scale-95 shadow-xl mt-2">
