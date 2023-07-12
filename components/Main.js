@@ -13,11 +13,14 @@ export default function Main() {
 	const [url,setUrl] = useState('');
 	const [mailUrl,setMailUrl] = useState('');
 	const [address,setAddress] = useState('');
+	const [orderSuccess,setOrderSuccess] = useState(false);
 
 
 	const sendMail = () => {
-		console.log()
-		window.location.href = `${encodeURI(`mailto:${process.env.NEXT_PUBLIC_MAIL}?subject=New Order&body=${mailUrl}`)}`
+		if(!orderSuccess){
+			window.location.href = `${encodeURI(`mailto:${process.env.NEXT_PUBLIC_MAIL}?subject=New Order&body=${mailUrl}`)}`
+			setOrderSuccess(true);
+		}
 	}
 
 	const mailUrlSetter = () => {
@@ -678,7 +681,12 @@ export default function Main() {
 							className="flex items-center md:gap-4 xs:gap-3 gap-2 font-semibold md:text-2xl 
 							text-xl bg-orange-400 px-5 py-4 rounded-xl text-white hover:scale-105 transition-all duration-100
 							ease-in active:scale-95 shadow-xl mt-2">
-								<FiMail className="md:h-8 h-7 w-7 md:w-8 "/> Order in Email
+								<FiMail className="md:h-8 h-7 w-7 md:w-8 "/> {
+									orderSuccess ?
+									'Order Placed'
+									:
+									'Order in Email'
+								}
 							</button>
 							<a href={url}><button className="flex items-center md:gap-4 xs:gap-3 gap-2 font-semibold md:text-2xl 
 							text-xl bg-[#25d366] px-5 py-4 rounded-xl text-white hover:scale-105 transition-all duration-100
