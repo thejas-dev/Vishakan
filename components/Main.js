@@ -131,7 +131,7 @@ export default function Main() {
 			</div>
 			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
 				<h1 className="md:px-10 px-5 py-4 lg:text-3xl md:text-2xl sm:text-xl text-xl font-semibold text-center text-black">
-					Made of 100% coconut oil
+					Products Made of 100% coconut oil
 				</h1>
 			</div>
 			<div className='w-full relative rounded-xl border-[1px] bg-white border-gray-500/30'>
